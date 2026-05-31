@@ -3,7 +3,7 @@ import { formatDateDe } from './dates'
 const RECIPIENT_EMAIL =
   import.meta.env.VITE_NOTIFICATION_EMAIL || 'youmaharadchu@gmail.com'
 
-function buildPayload({ date, food, place, movie }) {
+function buildPayload({ date, time, food, place, movie }) {
   const dateFormatted = formatDateDe(date)
   const movieAnswer = movie.custom
     ? 'Ich möchte den Film selbst auswählen'
@@ -13,6 +13,7 @@ function buildPayload({ date, food, place, movie }) {
     'Dorothea hat auf die Einladung geantwortet! 💕',
     '',
     `📅 Datum: ${dateFormatted}`,
+    `🕐 Abholzeit: ${time.label}`,
     `🍽️ Essen: ${food.emoji} ${food.label}`,
     `📍 Nach dem Abendessen: ${place.emoji} ${place.label}`,
     `🎬 Film: ${movieAnswer}`,
@@ -22,6 +23,7 @@ function buildPayload({ date, food, place, movie }) {
     subject: '💕 Dorothea hat auf das Date geantwortet!',
     message,
     dateFormatted,
+    timeLabel: time.label,
     movieAnswer,
   }
 }
@@ -36,6 +38,7 @@ async function sendViaWeb3Forms(payload, accessKey) {
       from_name: 'Doro Site',
       message: payload.message,
       date: payload.dateFormatted,
+      time: payload.timeLabel,
       food: payload.food,
       place: payload.place,
       movie: payload.movieAnswer,
@@ -65,6 +68,7 @@ async function sendViaFormSubmit(payload) {
         _template: 'table',
         message: payload.message,
         date: payload.dateFormatted,
+        time: payload.timeLabel,
         food: payload.food,
         place: payload.place,
         movie: payload.movieAnswer,
@@ -79,8 +83,8 @@ async function sendViaFormSubmit(payload) {
   return response.json()
 }
 
-export async function sendResponseEmail({ date, food, place, movie }) {
-  const payload = buildPayload({ date, food, place, movie })
+export async function sendResponseEmail({ date, time, food, place, movie }) {
+  const payload = buildPayload({ date, time, food, place, movie })
   payload.food = `${food.emoji} ${food.label}`
   payload.place = `${place.emoji} ${place.label}`
 

@@ -3,6 +3,7 @@ import HeartsBackground from './components/HeartsBackground'
 import AskModal from './components/AskModal'
 import CelebrationModal from './components/CelebrationModal'
 import DatePickerModal from './components/DatePickerModal'
+import TimePickerModal from './components/TimePickerModal'
 import FoodPickerModal from './components/FoodPickerModal'
 import AfterDinnerModal from './components/AfterDinnerModal'
 import MoviePickerModal from './components/MoviePickerModal'
@@ -12,6 +13,7 @@ import './App.css'
 function App() {
   const [step, setStep] = useState('ask')
   const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedTime, setSelectedTime] = useState(null)
   const [selectedFood, setSelectedFood] = useState(null)
   const [selectedPlace, setSelectedPlace] = useState(null)
   const [selectedMovie, setSelectedMovie] = useState(null)
@@ -19,7 +21,7 @@ function App() {
   const overlayClass =
     step === 'movie'
       ? 'modal-overlay modal-overlay--extra-wide'
-      : step === 'date' || step === 'food' || step === 'place'
+      : step === 'date' || step === 'time' || step === 'food' || step === 'place'
         ? 'modal-overlay modal-overlay--wide'
         : 'modal-overlay'
 
@@ -42,6 +44,15 @@ function App() {
             key="date"
             onConfirm={(date) => {
               setSelectedDate(date)
+              setStep('time')
+            }}
+          />
+        )}
+        {step === 'time' && (
+          <TimePickerModal
+            key="time"
+            onConfirm={(time) => {
+              setSelectedTime(time)
               setStep('food')
             }}
           />
@@ -75,12 +86,14 @@ function App() {
         )}
         {step === 'done' &&
           selectedDate &&
+          selectedTime &&
           selectedFood &&
           selectedPlace &&
           selectedMovie && (
           <SuccessModal
             key="done"
             date={selectedDate}
+            time={selectedTime}
             food={selectedFood}
             place={selectedPlace}
             movie={selectedMovie}

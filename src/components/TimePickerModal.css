@@ -1,0 +1,68 @@
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.time-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 2px solid var(--blue-pale);
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.time-cell:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue-light);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.time-cell--selected {
+  background: var(--gradient-btn);
+  border-color: transparent;
+  box-shadow: 0 4px 16px var(--shadow-strong);
+}
+
+.time-cell-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.time-cell-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-heading);
+}
+
+.time-cell--selected .time-cell-label {
+  color: #fff;
+}
+
+.time-picker-hint {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  color: var(--text-hint);
+}
+
+@media (max-width: 480px) {
+  .time-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .time-cell {
+    padding: 12px 6px;
+  }
+}

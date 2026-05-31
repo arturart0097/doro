@@ -4,17 +4,17 @@ import { formatDateDe } from '../utils/dates'
 import { sendResponseEmail } from '../utils/sendEmail'
 import './SuccessModal.css'
 
-export default function SuccessModal({ date, food, place, movie }) {
+export default function SuccessModal({ date, time, food, place, movie }) {
   const sentRef = useRef(false)
 
   useEffect(() => {
     if (sentRef.current) return
     sentRef.current = true
 
-    sendResponseEmail({ date, food, place, movie }).catch((error) => {
+    sendResponseEmail({ date, time, food, place, movie }).catch((error) => {
       console.error('Failed to send email notification:', error)
     })
-  }, [date, food, place, movie])
+  }, [date, time, food, place, movie])
 
   const movieText = movie.custom
     ? 'am Abend wählst du den Film selbst'
@@ -26,7 +26,7 @@ export default function SuccessModal({ date, food, place, movie }) {
       emoji="💑"
       celebrate
       title="Ausgemacht!"
-      text={`Ich freue mich auf dich am ${formatDateDe(date)} — ${food.emoji} ${food.label}, danach ${place.emoji} ${place.label}, ${movieText}. Bis bald, Dorothea! 💕`}
+      text={`Ich freue mich auf dich am ${formatDateDe(date)} um ${time.label} — ${food.emoji} ${food.label}, danach ${place.emoji} ${place.label}, ${movieText}. Bis bald, Dorothea! 💕`}
     >
       <p className="success-note">
         Mir war es zu schrecklich, das im Chat zu fragen, deshalb habe ich eine
