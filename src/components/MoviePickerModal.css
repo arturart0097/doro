@@ -1,0 +1,129 @@
+.movie-section + .movie-section {
+  margin-top: 20px;
+}
+
+.movie-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ad1457;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.movie-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 2px solid #f8bbd9;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.movie-cell:hover {
+  transform: translateY(-2px);
+  border-color: #f06292;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.movie-cell--selected {
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35);
+}
+
+.movie-cell-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.movie-cell-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #880e4f;
+  line-height: 1.2;
+}
+
+.movie-cell--selected .movie-cell-label {
+  color: #fff;
+}
+
+.movie-picker-hint {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  color: #ad1457;
+}
+
+.movie-custom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px 20px;
+  border: 2px dashed #f06292;
+  border-radius: 16px;
+  background: #fff8fb;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #880e4f;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.movie-custom-btn:hover {
+  transform: translateY(-2px);
+  border-color: #e91e63;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.movie-custom-btn--selected {
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  border-color: transparent;
+  border-style: solid;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35);
+}
+
+.movie-custom-btn-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .movie-cell {
+    padding: 12px 6px;
+  }
+
+  .movie-cell-emoji {
+    font-size: 1.5rem;
+  }
+}

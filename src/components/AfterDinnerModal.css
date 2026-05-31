@@ -1,0 +1,73 @@
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.place-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 2px solid #f8bbd9;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.place-cell:hover {
+  transform: translateY(-2px);
+  border-color: #f06292;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.place-cell--selected {
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35);
+}
+
+.place-cell-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.place-cell-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #880e4f;
+  line-height: 1.2;
+}
+
+.place-cell--selected .place-cell-label {
+  color: #fff;
+}
+
+.place-picker-hint {
+  margin: 16px 0 0;
+  font-size: 0.95rem;
+  color: #ad1457;
+}
+
+@media (max-width: 480px) {
+  .place-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .place-cell {
+    padding: 12px 6px;
+  }
+
+  .place-cell-emoji {
+    font-size: 1.5rem;
+  }
+}
