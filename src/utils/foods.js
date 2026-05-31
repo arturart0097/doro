@@ -1,13 +1,13 @@
 export const FOOD_OPTIONS = [
-  { id: 'pizza', emoji: '🍕', label: 'Піца' },
-  { id: 'pasta', emoji: '🍝', label: 'Паста' },
-  { id: 'salad', emoji: '🥗', label: 'Салат' },
-  { id: 'dessert', emoji: '🍰', label: 'Десерт' },
-  { id: 'wine', emoji: '🍷', label: 'Вино та сир' },
-  { id: 'tacos', emoji: '🌮', label: 'Вегетаріанські тако' },
-  { id: 'falafel', emoji: '🧆', label: 'Фалафел' },
-  { id: 'soup', emoji: '🍲', label: 'Суп' },
-  { id: 'home', emoji: '🥘', label: 'Щось домашнє' },
+  { id: 'pizza', emoji: '🍕', label: 'Pizza' },
+  { id: 'pasta', emoji: '🍝', label: 'Pasta' },
+  { id: 'salad', emoji: '🥗', label: 'Salat' },
+  { id: 'dessert', emoji: '🍰', label: 'Dessert' },
+  { id: 'wine', emoji: '🍷', label: 'Wein und Käse' },
+  { id: 'tacos', emoji: '🌮', label: 'Vegetarische Tacos' },
+  { id: 'falafel', emoji: '🧆', label: 'Falafel' },
+  { id: 'soup', emoji: '🍲', label: 'Suppe' },
+  { id: 'home', emoji: '🥘', label: 'Etwas Hausgemachtes' },
 ]
 
 export function getFoodById(id) {

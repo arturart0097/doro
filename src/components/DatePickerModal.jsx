@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import Modal from './Modal'
 import {
   formatDateParts,
-  formatDateUk,
+  formatDateDe,
   getAvailableDates,
   toDateKey,
 } from '../utils/dates'
@@ -13,7 +13,7 @@ export default function DatePickerModal({ onConfirm }) {
   const [selected, setSelected] = useState(null)
 
   const monthLabel = dates[0]
-    ? new Intl.DateTimeFormat('uk-UA', { month: 'long', year: 'numeric' }).format(
+    ? new Intl.DateTimeFormat('de-DE', { month: 'long', year: 'numeric' }).format(
         dates[0],
       )
     : ''
@@ -21,8 +21,8 @@ export default function DatePickerModal({ onConfirm }) {
   return (
     <Modal
       emoji="📅"
-      title="Обери дату"
-      text="На яке число тобі зручно?"
+      title="Datum wählen"
+      text="Welcher Tag passt dir?"
     >
       <p className="date-picker-month">{monthLabel}</p>
       <div className="date-grid">
@@ -56,13 +56,13 @@ export default function DatePickerModal({ onConfirm }) {
             if (date) onConfirm(date)
           }}
         >
-          Підтвердити 💖
+          Bestätigen 💖
         </button>
       </div>
 
       {selected && (
         <p className="date-picker-hint">
-          {formatDateUk(dates.find((d) => toDateKey(d) === selected))}
+          {formatDateDe(dates.find((d) => toDateKey(d) === selected))}
         </p>
       )}
     </Modal>

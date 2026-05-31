@@ -11,8 +11,8 @@ export default function AfterDinnerModal({ onConfirm }) {
   return (
     <Modal
       emoji="🌙"
-      title="Куди підемо після вечері?"
-      text="Обери, куди хочеться піти далі"
+      title="Wohin gehen wir nach dem Abendessen?"
+      text="Wähle, wohin du als Nächstes möchtest"
     >
       <div className="place-grid">
         {PLACE_OPTIONS.map((place) => {
@@ -40,13 +40,13 @@ export default function AfterDinnerModal({ onConfirm }) {
           disabled={!selected}
           onClick={() => chosen && onConfirm(chosen)}
         >
-          Підтвердити 💖
+          Bestätigen 💖
         </button>
       </div>
 
       {chosen && (
         <p className="place-picker-hint">
-          {chosen.emoji} {chosen.label} — звучить романтично!
+          {chosen.emoji} {chosen.label} — das klingt romantisch!
         </p>
       )}
     </Modal>

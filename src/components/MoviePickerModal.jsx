@@ -11,8 +11,8 @@ export default function MoviePickerModal({ onConfirm }) {
   return (
     <Modal
       emoji="🎥"
-      title="Який фільм на вечір?"
-      text="На твій вибір, Дороте — обери, що хочеться подивитись"
+      title="Welcher Film am Abend?"
+      text="Du entscheidest, Dorothea — wähle, was du sehen möchtest"
     >
       {MOVIE_SECTIONS.map((section) => (
         <section key={section.id} className="movie-section">
@@ -55,15 +55,15 @@ export default function MoviePickerModal({ onConfirm }) {
           disabled={!selected}
           onClick={() => chosen && onConfirm(chosen)}
         >
-          Підтвердити 💖
+          Bestätigen 💖
         </button>
       </div>
 
       {chosen && (
         <p className="movie-picker-hint">
           {chosen.custom
-            ? `${chosen.emoji} Добре, тоді фільм обереш ти!`
-            : `${chosen.emoji} «${chosen.label}» — гарний вибір!`}
+            ? `${chosen.emoji} Gut, dann wählst du den Film!`
+            : `${chosen.emoji} «${chosen.label}» — tolle Wahl!`}
         </p>
       )}
     </Modal>

@@ -1,7 +1,7 @@
 .date-picker-month {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ad1457;
+  color: var(--text-hint);
   text-transform: capitalize;
   margin: -16px 0 20px;
 }
@@ -19,7 +19,7 @@
   align-items: center;
   gap: 4px;
   padding: 12px 8px;
-  border: 2px solid #f8bbd9;
+  border: 2px solid var(--blue-pale);
   border-radius: 16px;
   background: #fff;
   cursor: pointer;
@@ -33,20 +33,20 @@
 
 .date-cell:hover {
   transform: translateY(-2px);
-  border-color: #f06292;
-  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+  border-color: var(--blue-light);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .date-cell--selected {
-  background: linear-gradient(135deg, #e91e63, #f06292);
+  background: var(--gradient-btn);
   border-color: transparent;
-  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.35);
+  box-shadow: 0 4px 16px var(--shadow-strong);
 }
 
 .date-cell-weekday {
   font-size: 0.7rem;
   font-weight: 500;
-  color: #9e7a8a;
+  color: var(--text-muted);
   text-transform: capitalize;
 }
 
@@ -57,7 +57,7 @@
 .date-cell-day {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #880e4f;
+  color: var(--blue-heading);
   line-height: 1;
 }
 
@@ -68,7 +68,7 @@
 .date-picker-hint {
   margin: 16px 0 0;
   font-size: 0.95rem;
-  color: #ad1457;
+  color: var(--text-hint);
   text-transform: capitalize;
 }
 

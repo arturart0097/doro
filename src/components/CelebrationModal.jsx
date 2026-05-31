@@ -6,11 +6,11 @@ export default function CelebrationModal({ onContinue }) {
       className="modal-yes"
       emoji="🎉"
       celebrate
-      title="Ура!"
-      text="Чудово! Тепер обери дату, яка тобі підходить 💕"
+      title="Hurra!"
+      text="Super! Wähle jetzt ein Datum, das dir passt 💕"
     >
       <button type="button" className="btn btn-yes" onClick={onContinue}>
-        Обрати дату 📅
+        Datum wählen 📅
       </button>
       <div className="confetti" aria-hidden="true">
         {Array.from({ length: 30 }).map((_, i) => (

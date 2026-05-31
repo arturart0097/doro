@@ -9,7 +9,7 @@ export default function FoodPickerModal({ onConfirm }) {
   const chosen = FOOD_OPTIONS.find((food) => food.id === selected)
 
   return (
-    <Modal emoji="🍽️" title="Що будемо їсти?" text="Обери, що тобі хочеться на побаченні">
+    <Modal emoji="🍽️" title="Was essen wir?" text="Wähle, worauf du beim Date Lust hast">
       <div className="food-grid">
         {FOOD_OPTIONS.map((food) => {
           const isSelected = selected === food.id
@@ -36,13 +36,13 @@ export default function FoodPickerModal({ onConfirm }) {
           disabled={!selected}
           onClick={() => chosen && onConfirm(chosen)}
         >
-          Підтвердити 💖
+          Bestätigen 💖
         </button>
       </div>
 
       {chosen && (
         <p className="food-picker-hint">
-          {chosen.emoji} {chosen.label} — чудовий вибір!
+          {chosen.emoji} {chosen.label} — tolle Wahl!
         </p>
       )}
     </Modal>

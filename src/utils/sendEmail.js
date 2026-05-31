@@ -1,25 +1,25 @@
-import { formatDateUk } from './dates'
+import { formatDateDe } from './dates'
 
 const RECIPIENT_EMAIL =
   import.meta.env.VITE_NOTIFICATION_EMAIL || 'youmaharadchu@gmail.com'
 
 function buildPayload({ date, food, place, movie }) {
-  const dateFormatted = formatDateUk(date)
+  const dateFormatted = formatDateDe(date)
   const movieAnswer = movie.custom
-    ? 'Я сама хочу обрати фільм'
+    ? 'Ich möchte den Film selbst auswählen'
     : `${movie.emoji} ${movie.label}`
 
   const message = [
-    'Дорота відповіла на запрошення! 💕',
+    'Dorothea hat auf die Einladung geantwortet! 💕',
     '',
-    `📅 Дата: ${dateFormatted}`,
-    `🍽️ Їжа: ${food.emoji} ${food.label}`,
-    `📍 Після вечері: ${place.emoji} ${place.label}`,
-    `🎬 Фільм: ${movieAnswer}`,
+    `📅 Datum: ${dateFormatted}`,
+    `🍽️ Essen: ${food.emoji} ${food.label}`,
+    `📍 Nach dem Abendessen: ${place.emoji} ${place.label}`,
+    `🎬 Film: ${movieAnswer}`,
   ].join('\n')
 
   return {
-    subject: '💕 Дорота відповіла на побачення!',
+    subject: '💕 Dorothea hat auf das Date geantwortet!',
     message,
     dateFormatted,
     movieAnswer,

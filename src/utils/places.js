@@ -1,12 +1,12 @@
 export const PLACE_OPTIONS = [
-  { id: 'walk', emoji: '🚶', label: 'Прогулянка по місту' },
-  { id: 'harbor', emoji: '⚓', label: 'Гавань' },
-  { id: 'home', emoji: '🏠', label: 'Додому' },
-  { id: 'park', emoji: '🌳', label: 'Парк' },
-  { id: 'coffee', emoji: '☕', label: 'Кавярня' },
-  { id: 'cinema', emoji: '🎬', label: 'Кіно' },
-  { id: 'sunset', emoji: '🌅', label: 'Зустріти захід сонця' },
-  { id: 'icecream', emoji: '🍦', label: 'Морозиво десь поруч' },
+  { id: 'walk', emoji: '🚶', label: 'Spaziergang durch die Stadt' },
+  { id: 'harbor', emoji: '⚓', label: 'Hafen' },
+  { id: 'home', emoji: '🏠', label: 'Nach Hause' },
+  { id: 'park', emoji: '🌳', label: 'Park' },
+  { id: 'coffee', emoji: '☕', label: 'Café' },
+  { id: 'cinema', emoji: '🎬', label: 'Kino' },
+  { id: 'sunset', emoji: '🌅', label: 'Sonnenuntergang anschauen' },
+  { id: 'icecream', emoji: '🍦', label: 'Eis irgendwo in der Nähe' },
 ]
 
 export function getPlaceById(id) {

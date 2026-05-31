@@ -2,11 +2,11 @@ import { useState, useCallback } from 'react'
 import Modal from './Modal'
 
 const NO_MESSAGES = [
-  'Ти впевнена? 🥺',
-  'Подумай ще раз…',
-  'Пліз, Дороте 💕',
-  'Я буду дуже сумувати…',
-  'Останній шанс! 😊',
+  'Bist du sicher? 🥺',
+  'Denk noch einmal nach…',
+  'Bitte, Dorothea 💕',
+  'Ich werde dich sehr vermissen…',
+  'Letzte Chance! 😊',
 ]
 
 export default function AskModal({ onYes }) {
@@ -33,11 +33,11 @@ export default function AskModal({ onYes }) {
 
   return (
     <Modal
-      emoji="🌸"
-      title="Привіт, Дороте!"
+      emoji="💙"
+      title="Hallo, Dorothea!"
       text={
         noCount === 0
-          ? 'Ти підеш зі мною на побачення?'
+          ? 'Willst du mit mir ausgehen?'
           : NO_MESSAGES[noCount]
       }
     >
@@ -48,7 +48,7 @@ export default function AskModal({ onYes }) {
           style={{ transform: `scale(${yesScale})` }}
           onClick={onYes}
         >
-          Так 💖
+          Ja 💖
         </button>
         <button
           type="button"
@@ -57,7 +57,7 @@ export default function AskModal({ onYes }) {
           onMouseEnter={moveNoButton}
           onClick={handleNo}
         >
-          Ні
+          Nein
         </button>
       </div>
     </Modal>

@@ -1,33 +1,33 @@
 export const MOVIE_SECTIONS = [
   {
     id: 'candles',
-    title: '16 свічок',
+    title: '16 Kerzen',
     movies: [
-      { id: 'candles-1', emoji: '🕯️', label: '16 свічок' },
-      { id: 'candles-2', emoji: '🕯️', label: '16 свічок' },
-      { id: 'candles-3', emoji: '🕯️', label: '16 свічок' },
+      { id: 'candles-1', emoji: '🕯️', label: '16 Kerzen' },
+      { id: 'candles-2', emoji: '🕯️', label: '16 Kerzen' },
+      { id: 'candles-3', emoji: '🕯️', label: '16 Kerzen' },
     ],
   },
   {
     id: 'burton',
-    title: 'Фільми Тіма Бертона',
+    title: 'Tim-Burton-Filme',
     movies: [
-      { id: 'edward', emoji: '✂️', label: 'Едвард з ножицями' },
-      { id: 'nightmare', emoji: '🎃', label: 'Кошмар перед Різдвом' },
-      { id: 'beetlejuice', emoji: '👻', label: 'Бітлджус' },
-      { id: 'corpse', emoji: '💀', label: 'Труп нареченої' },
-      { id: 'charlie', emoji: '🍫', label: 'Чарлі і шоколадна фабрика' },
+      { id: 'edward', emoji: '✂️', label: 'Edward mit den Scherenhänden' },
+      { id: 'nightmare', emoji: '🎃', label: 'Alptraum vor Weihnachten' },
+      { id: 'beetlejuice', emoji: '👻', label: 'Beetlejuice' },
+      { id: 'corpse', emoji: '💀', label: 'Corpse Bride' },
+      { id: 'charlie', emoji: '🍫', label: 'Charlie und die Schokoladenfabrik' },
     ],
   },
   {
     id: 'bw',
-    title: 'Чорно-білі фільми',
+    title: 'Schwarz-weiße Filme',
     movies: [
-      { id: 'casablanca', emoji: '🎬', label: 'Касабланка' },
-      { id: 'roman', emoji: '🛵', label: 'Римські канікули' },
-      { id: 'sunset', emoji: '🌆', label: 'Бульвар Сансет' },
-      { id: 'jury', emoji: '⚖️', label: '12 розгніваних чоловіків' },
-      { id: 'modern', emoji: '🎩', label: 'Сучасні часи' },
+      { id: 'casablanca', emoji: '🎬', label: 'Casablanca' },
+      { id: 'roman', emoji: '🛵', label: 'Römische Ferien' },
+      { id: 'sunset', emoji: '🌆', label: 'Boulevard der Dämmerung' },
+      { id: 'jury', emoji: '⚖️', label: 'Die zwölf Geschworenen' },
+      { id: 'modern', emoji: '🎩', label: 'Moderne Zeiten' },
     ],
   },
 ]
@@ -35,7 +35,7 @@ export const MOVIE_SECTIONS = [
 export const CUSTOM_MOVIE_CHOICE = {
   id: 'custom',
   emoji: '✨',
-  label: 'Я сама хочу обрати фільм',
+  label: 'Ich möchte den Film selbst auswählen',
   custom: true,
 }
 

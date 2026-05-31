@@ -1,11 +1,11 @@
-const UK_FORMAT = new Intl.DateTimeFormat('uk-UA', {
+const DE_FORMAT = new Intl.DateTimeFormat('de-DE', {
   weekday: 'long',
   day: 'numeric',
   month: 'long',
 })
 
-const UK_WEEKDAY = new Intl.DateTimeFormat('uk-UA', { weekday: 'short' })
-const UK_MONTH = new Intl.DateTimeFormat('uk-UA', { month: 'long' })
+const DE_WEEKDAY = new Intl.DateTimeFormat('de-DE', { weekday: 'short' })
+const DE_MONTH = new Intl.DateTimeFormat('de-DE', { month: 'long' })
 
 export function getAvailableDates(count = 14) {
   const dates = []
@@ -21,15 +21,15 @@ export function getAvailableDates(count = 14) {
   return dates
 }
 
-export function formatDateUk(date) {
-  return UK_FORMAT.format(date)
+export function formatDateDe(date) {
+  return DE_FORMAT.format(date)
 }
 
 export function formatDateParts(date) {
   return {
     day: date.getDate(),
-    weekday: UK_WEEKDAY.format(date),
-    month: UK_MONTH.format(date),
+    weekday: DE_WEEKDAY.format(date),
+    month: DE_MONTH.format(date),
   }
 }
 
